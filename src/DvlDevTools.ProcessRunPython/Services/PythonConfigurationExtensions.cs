@@ -9,9 +9,10 @@ namespace DvlDevTools.ProcessRunPython.Services
 {
     public static class PythonConfigurationExtensions
     {
-	    public static PythonRunProcessSettings GetPythonSettings(this IConfiguration configuration)
-	    {
-		    return configuration.GetSection("PythonSettings") as PythonRunProcessSettings;
-	    }
+	  //  public static PythonRunProcessSettings GetPythonSettings(this IConfiguration configuration)
+	  //  {
+			//var d = configuration.GetSection("PythonSettings").Get<PythonRunProcessSettings>();
+			//return new PythonRunProcessSettings();
+	  //  }
     }
 }

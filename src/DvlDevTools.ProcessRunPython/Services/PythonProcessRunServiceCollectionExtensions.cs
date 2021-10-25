@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,10 +12,14 @@ namespace DvlDevTools.ProcessRunPython.Services
     public static class PythonProcessRunServiceCollectionExtensions
     {
 	    public static void AddPythonProcess(this IServiceCollection services,
-		    Func<IConfiguration, PythonRunProcessSettings> predicate)
+		    PythonRunProcessSettings settings)
 	    {
-		    services.AddSingleton(predicate);
-		    services.AddScoped<PythonRunProcess>();
+			// Check if Directory for temp Exist
+			if (!Directory.Exists(settings.TempPythonScripts))
+				Directory.CreateDirectory(settings.TempPythonScripts);
+
+		    services.AddSingleton(settings);
+		    services.AddTransient<PythonRunProcess>();
 	    }
     }
 }

@@ -9,5 +9,6 @@ namespace DvlDevTools.ProcessRunPython
     public class PythonRunProcessSettings
     {
 	    public string PythonPath { get; set; }
+        public string TempPythonScripts { get; set; }
     }
 }
