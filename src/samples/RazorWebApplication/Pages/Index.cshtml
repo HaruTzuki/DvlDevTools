@@ -7,5 +7,13 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    @Model.Output
+
+	<form method="post">
+		<label class="lead">Python Script: </label><br />
+		<textarea name="pythonScript" cols="100" rows="20" class="form-control">@Model.Input</textarea>
+
+		<button type="submit">Submit Code</button>
+	</form>
+
+	<textarea cols="100" rows="20" readonly class="form-control">@Model.Output</textarea>
 </div>
