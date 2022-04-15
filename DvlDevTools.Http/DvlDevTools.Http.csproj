@@ -2,6 +2,30 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A simple library to create Api Calls</Description>
+    <Authors>Vlachopoulos Dimitris</Authors>
+    <Company>Vlachopoulos Dimitris</Company>
+    <Copyright>Copyright (c) Vlachopoulos Dimitris 2021.</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/HaruTzuki/DvlDevTools/tree/main/DvlDevTools.Http</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/HaruTzuki/DvlDevTools/tree/main/DvlDevTools.Http</RepositoryUrl>
+    <PackageTags>http client c#</PackageTags>
+    <NeutralLanguage>English</NeutralLanguage>
+    <PackageReleaseNotes>A simple library to create Api Calls easy.</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Desktop\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
