@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <Description>A simple library to create Api Calls</Description>
     <Authors>Vlachopoulos Dimitris</Authors>
     <Company>Vlachopoulos Dimitris</Company>

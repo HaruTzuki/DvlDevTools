@@ -17,16 +17,25 @@ namespace DvlDevTools.Http
 	{
 		public string BaseAddress { get; set; }
 		public DvlDevHttpContent Content { get; set; }
+		private readonly HttpClientHandler _httpClientHandler;
 
 		private readonly HttpClient _httpClient;
 
-		public DvlDevHttpClient()
-		{
-			_httpClient = new HttpClient();
+		public bool disableSSL = false;
 
+		public DvlDevHttpClient(bool disableSSL = false)
+		{
+			_httpClientHandler = new HttpClientHandler();
+
+			if (disableSSL)
+				_httpClientHandler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true;
+
+			_httpClient = new HttpClient(_httpClientHandler);
+			this.disableSSL = disableSSL;
 		}
 
-		public DvlDevHttpClient(HttpMessageHandler httpMessageHandler)
+
+		 public DvlDevHttpClient(HttpMessageHandler httpMessageHandler)
 		{
 			_httpClient = new HttpClient(httpMessageHandler);
 		}
@@ -90,6 +99,8 @@ namespace DvlDevTools.Http
 			{
 				_httpClient.BaseAddress = new Uri(BaseAddress);
 			}
+
+
 			var responseMessage = await _httpClient.GetAsync(requestUrl);
 			return new DvlDevHttpResponse()
 			{
